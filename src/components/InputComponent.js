@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class InputComponent extends Component {
 
+
     render() {
         return (
             <p>

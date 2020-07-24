@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ResultComponent from './components/ResultComponent';
 import InputComponent from "./components/InputComponent";
+import UnitComponent from "./components/UnitComponent";
 
 
 class App extends Component {
@@ -9,12 +10,15 @@ class App extends Component {
         super();
 
         this.state = {
-            result: "",
-            value: ""
+            result: "0",
+            value: "0",
+            unitI: "",
+            unitO: "",
+            converted: ""
         }
     }
 
-    handleChange = (e) => {
+    handleChange = e => {
         let checkResult = e.target.value
         e.preventDefault();        
         if(e.target.value.includes(' ')){
@@ -42,7 +46,10 @@ class App extends Component {
             <div>
                 <div className="converter-body">
                     <h1>Simple Converter</h1>
+                    <p>Input:</p>
+                    <UnitComponent />
                     <InputComponent handleChange={this.handleChange}/>
+                    <p>Result:</p>
                     <ResultComponent result={this.state.result}/>
                 </div>
             </div>
